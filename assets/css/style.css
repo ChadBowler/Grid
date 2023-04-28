@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+    /* border: 5px solid black; */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: aqua;
+}
+
+#header, #footer {
+    min-height: 3rem;
+    text-align: center;
+}
+
+.form {
+    min-height: 10vh;
+    display: flex;
+    justify-content: space-between;
+}
+.input {
+    min-height: 7vh;
+    width: 30%;
+}
+
+#grid-color {
+    width: 7vh;
+    height: 7vh;
+    
+}
+
+.buttons {
+    width: 80px;
+    height: 50px;
+    
+}
+
+.window {
+    height: 75vh;
+    width: 75vw;
+    margin: auto;
+    background-color: white;
+}

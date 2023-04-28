@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Grid</title>
+</head>
+<body>
+  <h1>Grid</h1>
+  <div id="canvas"></div>
+  <script>
+    function drawGrid(dimensions, divisions, color) {
+      // Create a new canvas element.
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+    
+      // Set the canvas size to the dimensions specified by the user.
+      canvas.width = dimensions.width;
+      canvas.height = dimensions.height;
+    
+      // Create a 2D array to store the grid lines.
+      const gridLines = [];
+    
+      // Loop through the divisions and create a grid line for each division.
+      for (let i = 0; i < divisions; i++) {
+        // Calculate the x and y coordinates of the grid line.
+        const x = i * (dimensions.width / divisions);
+        const y = i * (dimensions.height / divisions);
+    
+        // Add a new grid line to the array.
+        gridLines.push({
+          x,
+          y,
+        });
+      }
+    
+      // Set the stroke color to the color specified by the user.
+      ctx.strokeStyle = color;
+    
+      // Loop through the grid lines and draw each grid line.
+      for (const gridLine of gridLines) {
+        // Draw a line from the x and y coordinates of the grid line to the x and y coordinates of the next grid line.
+        ctx.beginPath();
+        ctx.moveTo(gridLine.x, gridLine.y);
+        ctx.lineTo((gridLine.x + 1) * (dimensions.width / divisions), (gridLine.y + 1) * (dimensions.height / divisions));
+        ctx.stroke();
+      }
+    }
+    
+    // Get the dimensions of the canvas.
+    const dimensions = {
+      width: canvas.width,
+      height: canvas.height,
+    };
+    
+    // Get the number of divisions from the user.
+    const divisions = prompt("How many divisions would you like?");
+    
+    // Get the color from the user.
+    const color = prompt("What color would you like the grid to be?");
+    
+    // Draw the grid.
+    drawGrid(dimensions, divisions, color);
+  </script>
+</body>
+</html>

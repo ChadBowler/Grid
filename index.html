@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/script/script.js"></script>
+    <title>Grid</title>
+</head>
+<body>
+    <header id="header">
+        <h1>Create a Grid</h1>
+    </header>
+
+    <form action="" method="get" id="input-form" class="form">
+        <label for="grid-dimensions">Grid Dimensions
+            <input type="number" name="Grid Dimensions" min="1" max="800" id="grid-dimensions" class="input" required>
+        </label>
+        <label for="grid-divisions">Grid Divisions
+            <input type="number" name="Grid Divisions" min="2" max="20" id="grid-divisions" class="input"required>
+        </label>
+        <label for="grid-color">Color
+            <input type="color" name="Color" id="grid-color" class="input">
+        </label>
+        <button type="button" onclick="getValues()" class="buttons">Submit</button>
+    </form>
+
+    
+
+    <div id="windows" class="window"></div>
+
+    <footer id="footer">
+        <h4>Thank You</h4>
+    </footer>
+</body>
+</html>
